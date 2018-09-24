@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @model razor_pages_demo.Pages.Movies.IndexModel
 
 @{
@@ -10,6 +10,20 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <p>
+        <select asp-for="MovieGenre" asp-items="Model.Genres">
+            <option value="">All</option>
+        </select>
+    </p>
+
+    <p>
+        Title: <input type="text" name="searchString"/>
+        <input type="submit" value="Filter"/>
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
